@@ -50,26 +50,47 @@
       gap: 2rem;
     }
 
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-
-    .gallery img {
-      border: 2px solid #ffd700;
-      border-radius: 10px;
-      width: 250px;
-      height: auto;
-      object-fit: cover;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-    }
-
     .gallery-title {
       color: #ffd700;
       font-size: 1.75rem;
       text-align: center;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .cosplay-card {
+      width: 250px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .cosplay-card img {
+      border: 2px solid #ffd700;
+      border-radius: 10px;
+      width: 100%;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+      transition: transform 0.2s;
+    }
+
+    .cosplay-card img:hover {
+      transform: scale(1.02);
+    }
+
+    .cosplay-info {
+      display: none;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #ddd;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 0.5rem;
+      border: 1px solid #ffd700;
     }
 
     footer {
@@ -95,19 +116,43 @@
   <div class="content">
     <div class="gallery-title">My Cosplay Gallery</div>
     <div class="gallery">
-      <!-- Replace these image sources with your actual cosplay photos -->
-      <img src="Loki.jpg" alt="President Loki" />
-      <img src="Solaire.jpg" alt="Solaire" />
-      <img src="Chainsaw.jpg" alt="Chainsaw Man" />
-      <img src="TV.jpg" alt="TV Head" />
-      <img src="Salesman.jpg" alt="Happy Masks Salesman" />
-      <img src="REPO.jpg" alt="REPO Semibot" />
+      <div class="cosplay-card" onclick="toggleInfo(this)">
+        <img src="Loki.jpg" alt="President Loki">
+        <div class="cosplay-info">A cheeky take on the trickster god—complete with campaign buttons and mischief.</div>
+      </div>
+      <div class="cosplay-card" onclick="toggleInfo(this)">
+        <img src="Solaire.jpg" alt="Solaire">
+        <div class="cosplay-info">Praise the Sun! Handmade armor and a radiant smile to match.</div>
+      </div>
+      <div class="cosplay-card" onclick="toggleInfo(this)">
+        <img src="Chainsaw.jpg" alt="Chainsaw Man">
+        <div class="cosplay-info">High-octane chaos with a roaring headpiece and chainsaw arms. Loud but stylish.</div>
+      </div>
+      <div class="cosplay-card" onclick="toggleInfo(this)">
+        <img src="TV.jpg" alt="TV Head">
+        <div class="cosplay-info">A surreal synthwave-inspired creation with glowing visuals inside a retro TV.</div>
+      </div>
+      <div class="cosplay-card" onclick="toggleInfo(this)">
+        <img src="Salesman.jpg" alt="Happy Mask Salesman">
+        <div class="cosplay-info">Creepy charm meets nostalgia. A nod to Majora’s Mask with hand-crafted props.</div>
+      </div>
+      <div class="cosplay-card" onclick="toggleInfo(this)">
+        <img src="REPO.jpg" alt="REPO Semibot">
+        <div class="cosplay-info">Cyberpunk noir inspired by Repo! The Genetic Opera. Dark, gritty, and theatrical.</div>
+      </div>
     </div>
   </div>
 
   <footer>
     &copy; 2025 grayant_. All rights reserved.
   </footer>
+
+  <script>
+    function toggleInfo(card) {
+      const info = card.querySelector('.cosplay-info');
+      info.style.display = info.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 
 </html>
