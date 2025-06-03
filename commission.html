@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Commission - grayant_</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #000000, #1a1a1a);
+      color: #fff;
+    }
+
+    header {
+      background-color: #000;
+      padding: 2rem;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      color: #ffd700;
+      border-bottom: 3px solid #ffd700;
+    }
+
+    nav {
+      background-color: #111;
+      text-align: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid #ffd700;
+    }
+
+    nav a {
+      color: #ffd700;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 600px;
+      border: 1px solid #ffd700;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+
+    .card h2 {
+      color: #ffd700;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #ffd700;
+    }
+
+    button {
+      background-color: #ffd700;
+      color: #000;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e6c200;
+    }
+
+    .socials {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .socials a {
+      color: #ffd700;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    grayant_
+  </header>
+
+  <nav>
+    <a href="index.html">About Me</a>
+    <a href="cosplays.html">Cosplays</a>
+    <a href="commission.html">Request a Commission</a>
+  </nav>
+
+  <div class="content">
+    <div class="card">
+      <h2>Request a Commission</h2>
+      <form action="https://formsubmit.co/grayseeberger@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
+
+        <label for="name">Your Name</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="details">Commission Details</label>
+        <textarea name="details" id="details" rows="5" required></textarea>
+
+        <button type="submit">Send Request</button>
+      </form>
+
+      <div class="socials">
+        <p>Or message me on Instagram: <a href="https://instagram.com/grayant_" target="_blank">@grayant_</a></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 grayant_. All rights reserved.
+  </footer>
+</body>
+
+</html>
