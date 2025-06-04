@@ -192,14 +192,29 @@
   </footer>
 
   <script>
-    function toggleInfo(card) {
-      const info = card.querySelector('.cosplay-info');
-      const extraContainer = card.querySelector('.extra-images');
-      const mainImage = card.querySelector('img');
-      const extraImages = mainImage.getAttribute('data-extra');
+  function toggleInfo(card) {
+    const allCards = document.querySelectorAll('.cosplay-card');
 
-      info.style.display = info.style.display === 'block' ? 'none' : 'block';
+    // First, hide all other info and extra images
+    allCards.forEach(otherCard => {
+      if (otherCard !== card) {
+        const otherInfo = otherCard.querySelector('.cosplay-info');
+        const otherExtras = otherCard.querySelector('.extra-images');
+        otherInfo.style.display = 'none';
+        otherExtras.style.display = 'none';
+      }
+    });
 
+    const info = card.querySelector('.cosplay-info');
+    const extraContainer = card.querySelector('.extra-images');
+    const mainImage = card.querySelector('img');
+    const extraImages = mainImage.getAttribute('data-extra');
+
+    const isVisible = info.style.display === 'block';
+
+    // Toggle visibility
+    info.style.display = isVisible ? 'none' : 'block';
+    if (!isVisible) {
       if (extraContainer.children.length === 0 && extraImages) {
         const paths = extraImages.split(',');
         paths.forEach(path => {
@@ -211,10 +226,13 @@
           }
         });
       }
-
-      extraContainer.style.display = extraContainer.style.display === 'flex' ? 'none' : 'flex';
+      extraContainer.style.display = 'flex';
+    } else {
+      extraContainer.style.display = 'none';
     }
-  </script>
+  }
+</script>
+
 </body>
 
 </html>
