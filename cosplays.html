@@ -57,32 +57,39 @@
     }
 
     .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  align-items: flex-start;
-}
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: flex-start;
+    }
 
-.cosplay-card {
-  width: 250px;
-  min-height: 400px; /* Ensures enough space when info is shown */
-  text-align: center;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    .cosplay-card {
+      width: 250px;
+      min-height: 400px;
+      text-align: center;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cosplay-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #ffd700;
+      margin-bottom: 0.5rem;
+    }
 
     .cosplay-card img {
-  border: 2px solid #ffd700;
-  border-radius: 10px;
-  width: auto;
-  height: 350px; /* Set your preferred uniform height */
-  object-fit: cover;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-  transition: transform 0.2s;
-}
+      border: 2px solid #ffd700;
+      border-radius: 10px;
+      width: auto;
+      height: 350px;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+      transition: transform 0.2s;
+    }
 
     .cosplay-card img:hover {
       transform: scale(1.02);
@@ -123,26 +130,32 @@
     <div class="gallery-title">My Cosplay Gallery</div>
     <div class="gallery">
       <div class="cosplay-card" onclick="toggleInfo(this)">
+        <div class="cosplay-title">President Loki</div>
         <img src="Loki.jpg" alt="President Loki">
         <div class="cosplay-info">A cheeky take on the trickster god—complete with campaign buttons and mischief.</div>
       </div>
       <div class="cosplay-card" onclick="toggleInfo(this)">
+        <div class="cosplay-title">Solaire</div>
         <img src="Solaire.jpg" alt="Solaire">
         <div class="cosplay-info">Praise the Sun! Handmade armor and a radiant smile to match.</div>
       </div>
       <div class="cosplay-card" onclick="toggleInfo(this)">
+        <div class="cosplay-title">Chainsaw Man</div>
         <img src="Chainsaw.jpg" alt="Chainsaw Man">
         <div class="cosplay-info">High-octane chaos with a roaring headpiece and chainsaw arms. Loud but stylish.</div>
       </div>
       <div class="cosplay-card" onclick="toggleInfo(this)">
+        <div class="cosplay-title">TV Head</div>
         <img src="TV.jpg" alt="TV Head">
         <div class="cosplay-info">A surreal synthwave-inspired creation with glowing visuals inside a retro TV.</div>
       </div>
       <div class="cosplay-card" onclick="toggleInfo(this)">
+        <div class="cosplay-title">Happy Mask Salesman</div>
         <img src="Salesman.jpg" alt="Happy Mask Salesman">
         <div class="cosplay-info">Creepy charm meets nostalgia. A nod to Majora’s Mask with hand-crafted props.</div>
       </div>
       <div class="cosplay-card" onclick="toggleInfo(this)">
+        <div class="cosplay-title">REPO Semibot</div>
         <img src="REPO.jpg" alt="REPO Semibot">
         <div class="cosplay-info">Cyberpunk noir inspired by Repo! The Genetic Opera. Dark, gritty, and theatrical.</div>
       </div>
