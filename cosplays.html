@@ -57,17 +57,22 @@
     }
 
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
 
-    .cosplay-card {
-      width: 250px;
-      text-align: center;
-      cursor: pointer;
-    }
+.cosplay-card {
+  width: 250px;
+  min-height: 400px; /* Ensures enough space when info is shown */
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
     .cosplay-card img {
   border: 2px solid #ffd700;
