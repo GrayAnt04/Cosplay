@@ -66,7 +66,6 @@
 
     .cosplay-card {
       width: 250px;
-      min-height: 400px;
       text-align: center;
       cursor: pointer;
       display: flex;
@@ -106,6 +105,21 @@
       border: 1px solid #ffd700;
     }
 
+    .extra-images {
+      display: none;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .extra-images img {
+      height: 150px;
+      border: 2px solid #ffd700;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -131,33 +145,44 @@
     <div class="gallery">
       <div class="cosplay-card" onclick="toggleInfo(this)">
         <div class="cosplay-title">President Loki</div>
-        <img src="Loki.jpg" alt="President Loki">
+        <img src="Loki.jpg" alt="President Loki" data-extra="Loki2.jpg,Loki3.jpg">
         <div class="cosplay-info">A cheeky take on the trickster god—complete with campaign buttons and mischief.</div>
+        <div class="extra-images"></div>
       </div>
+
       <div class="cosplay-card" onclick="toggleInfo(this)">
         <div class="cosplay-title">Solaire</div>
-        <img src="Solaire.jpg" alt="Solaire">
+        <img src="Solaire.jpg" alt="Solaire" data-extra="Solaire2.jpg">
         <div class="cosplay-info">Praise the Sun! Handmade armor and a radiant smile to match.</div>
+        <div class="extra-images"></div>
       </div>
+
       <div class="cosplay-card" onclick="toggleInfo(this)">
         <div class="cosplay-title">Chainsaw Man</div>
-        <img src="Chainsaw.jpg" alt="Chainsaw Man">
+        <img src="Chainsaw.jpg" alt="Chainsaw Man" data-extra="Chainsaw2.jpg,Chainsaw3.jpg">
         <div class="cosplay-info">High-octane chaos with a roaring headpiece and chainsaw arms. Loud but stylish.</div>
+        <div class="extra-images"></div>
       </div>
+
       <div class="cosplay-card" onclick="toggleInfo(this)">
         <div class="cosplay-title">TV Head</div>
-        <img src="TV.jpg" alt="TV Head">
+        <img src="TV.jpg" alt="TV Head" data-extra="">
         <div class="cosplay-info">A surreal synthwave-inspired creation with glowing visuals inside a retro TV.</div>
+        <div class="extra-images"></div>
       </div>
+
       <div class="cosplay-card" onclick="toggleInfo(this)">
         <div class="cosplay-title">Happy Mask Salesman</div>
-        <img src="Salesman.jpg" alt="Happy Mask Salesman">
+        <img src="Salesman.jpg" alt="Happy Mask Salesman" data-extra="Salesman2.jpg">
         <div class="cosplay-info">Creepy charm meets nostalgia. A nod to Majora’s Mask with hand-crafted props.</div>
+        <div class="extra-images"></div>
       </div>
+
       <div class="cosplay-card" onclick="toggleInfo(this)">
         <div class="cosplay-title">REPO Semibot</div>
-        <img src="REPO.jpg" alt="REPO Semibot">
+        <img src="REPO.jpg" alt="REPO Semibot" data-extra="REPO2.jpg,REPO3.jpg">
         <div class="cosplay-info">Cyberpunk noir inspired by Repo! The Genetic Opera. Dark, gritty, and theatrical.</div>
+        <div class="extra-images"></div>
       </div>
     </div>
   </div>
@@ -169,7 +194,25 @@
   <script>
     function toggleInfo(card) {
       const info = card.querySelector('.cosplay-info');
+      const extraContainer = card.querySelector('.extra-images');
+      const mainImage = card.querySelector('img');
+      const extraImages = mainImage.getAttribute('data-extra');
+
       info.style.display = info.style.display === 'block' ? 'none' : 'block';
+
+      if (extraContainer.children.length === 0 && extraImages) {
+        const paths = extraImages.split(',');
+        paths.forEach(path => {
+          if (path.trim() !== "") {
+            const img = document.createElement('img');
+            img.src = path.trim();
+            img.alt = "Extra";
+            extraContainer.appendChild(img);
+          }
+        });
+      }
+
+      extraContainer.style.display = extraContainer.style.display === 'flex' ? 'none' : 'flex';
     }
   </script>
 </body>
