@@ -17,11 +17,22 @@
     header {
       background-color: #000;
       padding: 2rem;
-      text-align: center;
+      border-bottom: 3px solid #ffd700;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
       font-family: 'Orbitron', sans-serif;
       font-size: 2rem;
       color: #ffd700;
-      border-bottom: 3px solid #ffd700;
+    }
+
+    .header-content img {
+      height: 50px;
+      width: auto;
     }
 
     nav {
@@ -75,7 +86,8 @@
       font-weight: bold;
     }
 
-    input, textarea {
+    input,
+    textarea {
       padding: 0.8rem;
       border-radius: 8px;
       border: none;
@@ -125,7 +137,10 @@
 
 <body>
   <header>
-    grayant_ Commission
+    <div class="header-content">
+      <img src="CosplayLogo.png" alt="Cosplay Logo">
+      <span>grayant_ Commission</span>
+    </div>
   </header>
 
   <nav>
@@ -137,8 +152,7 @@
   <div class="content">
     <div class="card">
       <h2>Request a Commission</h2>
-     <form action="https://formspree.io/f/xblyjwge" method="POST">
-     
+      <form action="https://formspree.io/f/xblyjwge" method="POST">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="thankyou.html">
 
